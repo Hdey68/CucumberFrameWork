@@ -16,7 +16,7 @@ public class LoginStepDefinition extends CommonMethods {
     }
 
     @When("Enter valid credentials")
-    public void enter_valid_credentials() {
+    public void enter_valid_credentials ( ) {
         loginPage.login ( "Admin", "Hum@nhrm123" );
     }
 
@@ -26,13 +26,8 @@ public class LoginStepDefinition extends CommonMethods {
     }
 
     @Then("Validate dashboard is displayed")
-    public void validate_dashboard_is_displayed() {
+    public void validate_dashboard_is_displayed ( ) {
         Assert.assertTrue ( dashboardPage.welcomeMessage.isDisplayed ( ) );
-    }
-
-    @Then("quit the browser")
-    public void quit_the_browser ( ) {
-        tearDown ( );
     }
 
     @When("Enter invalid credentials")
@@ -42,15 +37,31 @@ public class LoginStepDefinition extends CommonMethods {
 
     @Then("Validate error message equals expected result")
     public void validate_error_message_equals_expected_result ( ) {
-        Assert.assertEquals("Verifying error message","Invalid credentials",loginPage.getErrorMessageText ());
+        Assert.assertEquals ( "Verifying error message", "Invalid credentials", loginPage.getErrorMessageText ( ) );
     }
 
     @Then("Close browser")
     public void close_browser ( ) {
-        tearDown ();
+        tearDown ( );
     }
 
-}
+    @When("Leave an empty username")
+    public void leave_an_empty_username() {
+        loginPage.login ( "","Hum@nhrm123" );
+    }
+    @Then("Validate error message for empty Username")
+    public void validate_error_message_for_empty_username() {
+        Assert.assertEquals ( "Verifying error message","Username cannot be empty",loginPage.getErrorMessageText () );
 
+    }
+    @When("Leave an empty password")
+    public void leave_an_empty_password() {
+        loginPage.login ( "Admin", "" );
+    }
+    @Then("Validate error message for Empty Password")
+    public void validate_error_message_for_empty_password() {
+        Assert.assertEquals ( "Verifying error message", "Password cannot be empty", loginPage.getErrorMessageText ( ) );
+    }
+}
 
 
