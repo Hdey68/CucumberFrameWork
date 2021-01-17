@@ -10,7 +10,7 @@ public class DashBoardPage extends CommonMethods {
     @FindBy(id = "welcome")
     public WebElement welcomeMessage;
 
-    @FindBy(linkText = "PIM")
+    @FindBy(id="menu_pim_viewPimModule")
     public WebElement PIMButton;
 
     @FindBy(id = "menu_pim_addEmployee")

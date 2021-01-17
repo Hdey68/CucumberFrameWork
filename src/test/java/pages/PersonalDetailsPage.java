@@ -11,7 +11,7 @@ public class PersonalDetailsPage extends CommonMethods {
     @FindBy(xpath = "//h1[text() = 'Personal Details']")
     public WebElement personalDetail;
 
-    @FindBy (id = "personal_txtEmployeeId")
+    @FindBy (xpath = "//*[@id=\"personal_txtEmployeeId\"]")
     public WebElement employeeIDtxt;
 
     @FindBy (id = "personal_txtEmpFirstName")
@@ -26,4 +26,6 @@ public class PersonalDetailsPage extends CommonMethods {
     public PersonalDetailsPage() {
         PageFactory.initElements(driver, this);
     }
-}
+
+    }
+
