@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2568000000,
+              "duration": 2600000000,
               "status": "passed"
             },
             "line": 7,
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T18:57:06.828Z",
+        "start_timestamp": "2021-03-05T21:35:56.331Z",
         "line": 9,
         "name": "Creating an Employee",
         "description": "",
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 46000000,
+              "duration": 45000000,
               "status": "passed"
             },
             "line": 11,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 41000000,
+              "duration": 37000000,
               "status": "passed"
             },
             "line": 12,
@@ -76,13 +76,23 @@
           },
           {
             "result": {
-              "duration": 79000000,
+              "duration": 56000000,
               "status": "passed"
             },
             "line": 13,
-            "name": "the employee is created",
+            "name": "the employee is created contains key \"Message\" and value \"Entry Created\"",
             "match": {
-              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_employee_is_created()"
+              "arguments": [
+                {
+                  "val": "\"Message\"",
+                  "offset": 37
+                },
+                {
+                  "val": "\"Entry Created\"",
+                  "offset": 57
+                }
+              ],
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_employee_is_created_contains_key_and_value(java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
@@ -92,9 +102,15 @@
               "status": "passed"
             },
             "line": 14,
-            "name": "the employeeID is stored in the global variable to be used for other calls",
+            "name": "the employeeID \"Employee[0].employee_id\" is stored in the global variable to be used for other calls",
             "match": {
-              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_employeeID_is_stored_in_the_global_variable_to_be_used_for_other_calls()"
+              "arguments": [
+                {
+                  "val": "\"Employee[0].employee_id\"",
+                  "offset": 15
+                }
+              ],
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_employeeID_is_stored_in_the_global_variable_to_be_used_for_other_calls(java.lang.String)"
             },
             "keyword": "And "
           }
@@ -114,7 +130,7 @@
         "steps": [
           {
             "result": {
-              "duration": 55000000,
+              "duration": 46000000,
               "status": "passed"
             },
             "line": 7,
@@ -127,7 +143,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T18:57:09.787Z",
+        "start_timestamp": "2021-03-05T21:35:59.269Z",
         "line": 17,
         "name": "Retrieving the created employee",
         "description": "",
@@ -137,56 +153,80 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 9000000,
+              "status": "passed"
             },
             "line": 18,
             "name": "a request is prepared to retrieve the created employee",
-            "match": {},
+            "match": {
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.a_request_is_prepared_to_retrieve_the_created_employee()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 60000000,
+              "status": "passed"
             },
             "line": 19,
             "name": "a GET call is made to retrieve the created Employee",
-            "match": {},
+            "match": {
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.a_GET_call_is_made_to_retrieve_the_created_Employee()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 1000000,
+              "status": "passed"
             },
             "line": 20,
             "name": "the status code for retrieving the created employee is 200",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 55
+                }
+              ],
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_status_code_for_retrieving_the_created_employee_is(int)"
+            },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 12000000,
+              "status": "passed"
             },
             "line": 21,
-            "name": "the retrieved EmployeeID matches the globally stored EmployeeID",
-            "match": {},
+            "name": "the retrieved EmployeeID \"employee[0].employee_id\" matches the globally stored EmployeeID",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"employee[0].employee_id\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_retrieved_EmployeeID_matches_the_globally_stored_EmployeeID(java.lang.String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 77000000,
+              "status": "passed"
             },
             "line": 22,
-            "name": "the retrieved data matched the data used to create the employee",
-            "match": {},
+            "name": "the retrieved data matches the data used to create the employee",
+            "match": {
+              "location": "com.hrms.api.Testing.apiTestingFinalSteps.the_retrieved_data_matches_the_data_used_to_create_the_employee()"
+            },
             "keyword": "And "
           }
         ],
         "tags": [
           {
             "name": "@apiWorkflow"
-          },
-          {
-            "name": "@progression"
           }
         ]
       }
