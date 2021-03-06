@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features", // need to give a path for our feature files
-        glue = "com/hrms/stepdefinitions", // we need to glue our step definitions - implementation
+        glue = "com/hrms/stepdefinitions",
+        // we need to glue our step definitions - implementation
         dryRun = false, // when set as true, will run over the feature steps and reveal unimplemented steps in console
         tags = {"@pim"},// adding tag
         strict = false, // when set as true, will fail the execution when undefined step is found
