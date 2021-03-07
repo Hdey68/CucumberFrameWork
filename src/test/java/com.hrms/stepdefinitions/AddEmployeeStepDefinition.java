@@ -26,7 +26,7 @@ public class AddEmployeeStepDefinition extends CommonMethods {
 
     @Then("enter first and last name")
     public void enter_first_and_last_name() {
-        addEmployeePage.enterFirstAndLastName("Thor", "Potter");
+        addEmployeePage.enterFirstAndLastName("moazzam", "sadiq");
     }
 
     @Then("enter first and middle name and last name")
@@ -49,7 +49,7 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     @Then("verify employee is added successfully")
     public void verify_employee_is_added_successfully() {
         String actualProfileName = personalDetailsPage.getUserProfileName ();
-        Assert.assertEquals("Verifying profile name", "Thor Potter", actualProfileName);
+        Assert.assertEquals("Verifying profile name", "moazzam sadiq", actualProfileName);
 
     }
     @When("click on create login details checkbox")
