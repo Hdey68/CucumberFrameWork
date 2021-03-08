@@ -23,9 +23,9 @@ Feature: Add Employee Functionality
 
   @parameter
   Scenario: Add employee without login details but with middle name
-    Then enter first name "Ali", middle name "Osman" and last name "Kursun"
+    Then enter first name "nabila", middle name "nana" and last name "tata"
     And click on save button
-    Then verify that "Ali Osman Kursun" is added successfully
+    Then verify that "nabila nana tata" is added successfully
 
   @examples
   Scenario Outline: Adding multiple employees without login details

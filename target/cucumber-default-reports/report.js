@@ -1,18 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/ConfigurePIM.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/addEmployee.feature");
 formatter.feature({
-  "name": "Configure PIM - Optional Fields",
+  "name": "Add Employee Functionality",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Unchecking unnecessary checkboxes",
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@pim"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
@@ -58,45 +53,31 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "click on configuration dropdown",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.hrms.stepdefinitions.PIMConfigurationStepDefinition.click_on_configuration_dropdown()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "click on optional fields",
+  "name": "click on add employee button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.hrms.stepdefinitions.PIMConfigurationStepDefinition.click_on_optional_fields()"
+  "location": "com.hrms.stepdefinitions.AddEmployeeStepDefinition.click_on_add_employee_button()"
 });
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "Add employee without login details",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@addEmployeeWithoutLogin"
+    }
+  ]
+});
 formatter.step({
-  "name": "click on edit button",
+  "name": "enter first and last name",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.stepdefinitions.PIMConfigurationStepDefinition.click_on_edit_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "uncheck unnecessary checkboxes",
-  "rows": [
-    {},
-    {}
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.stepdefinitions.PIMConfigurationStepDefinition.uncheck_unnecessary_checkboxes(io.cucumber.datatable.DataTable)"
+  "location": "com.hrms.stepdefinitions.AddEmployeeStepDefinition.enter_first_and_last_name()"
 });
 formatter.result({
   "status": "passed"
@@ -111,7 +92,18 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", "Unchecking unnecessary checkboxes");
+formatter.step({
+  "name": "verify employee is added successfully",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.hrms.stepdefinitions.AddEmployeeStepDefinition.verify_employee_is_added_successfully()"
+});
+formatter.result({
+  "error_message": "org.junit.ComparisonFailure: Verifying profile name expected:\u003c[nabila tata]\u003e but was:\u003c[Rock H Lee]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat com.hrms.stepdefinitions.AddEmployeeStepDefinition.verify_employee_is_added_successfully(AddEmployeeStepDefinition.java:55)\r\n\tat ✽.verify employee is added successfully(file:///C:/Users/sofiane/eclipse-workspace/CucumberFrameworkBatch8/src/test/resources/features/addEmployee.feature:14)\r\n",
+  "status": "failed"
+});
+formatter.embedding("image/png", "embedded0.png", "Add employee without login details");
 formatter.after({
   "status": "passed"
 });

@@ -26,12 +26,13 @@ public class AddEmployeeStepDefinition extends CommonMethods {
 
     @Then("enter first and last name")
     public void enter_first_and_last_name() {
-        addEmployeePage.enterFirstAndLastName("moazzam", "sadiq");
+        addEmployeePage.empIDTextbox.clear ();
+        addEmployeePage.enterFirstAndLastName("nabila", "tata");
     }
 
     @Then("enter first and middle name and last name")
     public void enter_first_and_middle_name_and_last_name() {
-        addEmployeePage.enterFirstMiddleAndLastName ( "Mohamed","A","Gouba" );
+        addEmployeePage.enterFirstMiddleAndLastName ( "nabila","nana","tata" );
 
     }
 
@@ -42,14 +43,16 @@ public class AddEmployeeStepDefinition extends CommonMethods {
 
     }
     @Then("click on save button")
-    public void click_on_save_button()  {
+    public void click_on_save_button() throws InterruptedException {
+        Thread.sleep ( 2000 );
         addEmployeePage.clickOnSaveBtn();
 
     }
     @Then("verify employee is added successfully")
-    public void verify_employee_is_added_successfully() {
+    public void verify_employee_is_added_successfully() throws InterruptedException {
+        Thread.sleep ( 2000 );
         String actualProfileName = personalDetailsPage.getUserProfileName ();
-        Assert.assertEquals("Verifying profile name", "moazzam sadiq", actualProfileName);
+        Assert.assertEquals("Verifying profile name", "nabila tata", actualProfileName);
 
     }
     @When("click on create login details checkbox")
@@ -60,6 +63,7 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     @Then("enter first name {string}, middle name {string} and last name {string}")
     public void enter_first_name_middle_name_and_last_name(String firstName, String middleName,
                                                            String lastName) {
+       // addEmployeePage.empIDTextbox.clear ();
         addEmployeePage.enterFirstMiddleAndLastName(firstName, middleName, lastName);
     }
 
@@ -70,8 +74,9 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     }
 
     @When("enter {string}, {string} and {string}")
-    public void enter_and(String firstName, String middleName, String lastName) {
+    public void enter_and(String firstName, String middleName, String lastName) throws InterruptedException {
         addEmployeePage.enterFirstMiddleAndLastName(firstName, middleName, lastName);
+        Thread.sleep ( 2000 );
     }
 
     @Then("verify {string}, {string} and {string} is added successfully")
