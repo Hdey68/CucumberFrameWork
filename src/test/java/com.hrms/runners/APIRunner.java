@@ -18,5 +18,5 @@ import io.cucumber.core.exception.CucumberException;
                 "json:target/cucumber.json" // generates json report
         }
 )
-public class apiRunner {
+public class APIRunner {
 }
