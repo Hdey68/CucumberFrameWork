@@ -16,4 +16,4 @@ Feature: Login Functionality
     When enter invalid credentials
     And click on login button
     Then verify error message
-    Then quit the browser
+    #Then quit the browser
