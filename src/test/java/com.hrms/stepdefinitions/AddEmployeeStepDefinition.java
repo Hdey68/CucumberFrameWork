@@ -4,8 +4,7 @@ import com.hrms.utils.CommonMethods;
 import com.hrms.utils.Constants;
 import com.hrms.utils.ExcelUtils;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 import java.util.List;
@@ -30,6 +29,23 @@ public class AddEmployeeStepDefinition extends CommonMethods {
         addEmployeePage.enterFirstAndLastName("nabila", "tata");
     }
 
+    @Then("click on save button")
+    public void click_on_save_button() throws InterruptedException {
+        Thread.sleep ( 2000 );
+        addEmployeePage.clickOnSaveBtn();
+
+    }
+    @Then("verify employee is added successfully")
+    public void verify_employee_is_added_successfully() {
+        String actualProfileName = personalDetailsPage.getUserProfileName ();
+        Assert.assertEquals("Verifying profile name", "nabila tata", actualProfileName);
+
+    }
+    @When("click on create login details checkbox")
+    public void click_on_create_login_details_checkbox() {
+        addEmployeePage.createLoginCheckbox.click ();
+
+    }
     @Then("enter first and middle name and last name")
     public void enter_first_and_middle_name_and_last_name() {
         addEmployeePage.enterFirstMiddleAndLastName ( "nabila","nana","tata" );
@@ -38,26 +54,8 @@ public class AddEmployeeStepDefinition extends CommonMethods {
 
     @Then("create username and password and confirm password")
     public void create_username_and_password_and_confirm_password() throws InterruptedException {
-        addEmployeePage.createUsernamePasswordAndConfirmPassword ( "MohamedAlger","Algiers12345!","Algiers12345!" );
-        Thread.sleep ( 10000 );
-
-    }
-    @Then("click on save button")
-    public void click_on_save_button() throws InterruptedException {
-        Thread.sleep ( 2000 );
-        addEmployeePage.clickOnSaveBtn();
-
-    }
-    @Then("verify employee is added successfully")
-    public void verify_employee_is_added_successfully() throws InterruptedException {
-        Thread.sleep ( 2000 );
-        String actualProfileName = personalDetailsPage.getUserProfileName ();
-        Assert.assertEquals("Verifying profile name", "nabila tata", actualProfileName);
-
-    }
-    @When("click on create login details checkbox")
-    public void click_on_create_login_details_checkbox() {
-        addEmployeePage.createLoginCheckbox.click ();
+        addEmployeePage.createUsernamePasswordAndConfirmPassword ( "MohamedAlger5","Algiers@12345!$toto7","Algiers@12345!$toto7" );
+        //Thread.sleep ( 2000 );
 
     }
     @Then("enter first name {string}, middle name {string} and last name {string}")

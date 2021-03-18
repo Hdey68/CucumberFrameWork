@@ -30,9 +30,6 @@ public class AddEmployeePage extends CommonMethods {
     @FindBy (id = "photofile")
     public WebElement photograph;
 
-    @FindBy (id = "chkLogin")
-    public WebElement createLoginDetails;
-
     @FindBy(id = "user_name")
     public WebElement usernameCreate;
 
